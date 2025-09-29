@@ -141,3 +141,13 @@ header {
 .custom-nav .nav-link {
   display: inline-block;
 }
+
+@media (max-width: 1098px) {
+    .custom-nav {
+        display: none !important;
+    }
+
+    .navbar-toggler {
+        display: block !important;
+    }
+}

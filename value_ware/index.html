@@ -19,16 +19,39 @@
                 <img src="img/logo_value.png" alt="logo Value Ware" class="logo-header">
             </a>
 
-            <!-- MENU -->
-            <ul class="nav nav-pills custom-nav ms-auto me-4">
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Institucional</a></li>
+            <!-- Botão para abrir o offcanvas -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNav" aria-controls="offcanvasNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu padrão para telas grandes -->
+            <ul class="nav nav-pills custom-nav ms-auto me-4 d-none d-lg-flex">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="institucional.html" class="nav-link">Institucional</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Value Management Officer</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">MBAs e cursos</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li>
             </ul>
         </div>
     </header>
+
+    <!-- OFFCANVAS MENU -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="institucional.html" class="nav-link">Institucional</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Value Management Officer</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">MBAs e cursos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- MAIN -->
     <main>
