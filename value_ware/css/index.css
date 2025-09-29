@@ -2,8 +2,39 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Oxanium:wght@200..800&display=swap');
 
+/* ===========================
+   GLOBAL
+=========================== */
 body {
   padding-top: 100px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Oxanium:wght@200..800&display=swap');
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  margin-bottom: 0;
+}
+
+#mainHeader {
+  transition: top 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#mainHeader.header-hidden {
+  top: -200px;
+}
+
+#mainHeader.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-header {
@@ -11,8 +42,19 @@ body {
   height: 40px;
 }
 
+/* ===========================
+   NAVIGATION (HEADER MENU)
+=========================== */
+.custom-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
 .custom-nav .nav-link {
   position: relative;
+  display: inline-block;
   color: rgb(55, 55, 55);
   font-family: "Lexend", sans-serif;
   font-weight: 300;
@@ -36,34 +78,21 @@ body {
   width: 100%;
 }
 
-header {
-  margin-bottom: 0
+@media (max-width: 1098px) {
+  .custom-nav {
+    display: none !important;
+  }
+
+  .navbar-toggler {
+    display: block !important;
+  }
 }
 
-#mainHeader {
-  transition: top 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* quando o JS adicionar essa classe → header sobe */
-#mainHeader.header-hidden {
-  top: -200px;
-}
-
-/* sombra quando rolar */
-#mainHeader.scrolled {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* ===========================
+   MAIN BANNER
+=========================== */
 .banner-img {
   height: 800px;
-  /* ou 400px, se quiser fixo */
   object-fit: cover;
   display: block;
   margin-top: -200px;
@@ -79,11 +108,19 @@ header {
     0 0 10px rgba(47, 47, 47, 0.4),
     0 0 20px rgba(47, 47, 47, 0.4);
   margin-top: -430px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.titulo-banner.ativo {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bounce-arrow {
-    font-size: 3rem; 
-    animation: bounce 2s infinite;
+  font-size: 3rem;
+  animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
@@ -91,16 +128,22 @@ header {
   50% { transform: translateX(-50%) translateY(-15px); }
 }
 
+/* ===========================
+   SECTION: SOBRE NÓS
+=========================== */
 .sobre-nos {
-    padding-top: 100px;
-    padding-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
+/* ===========================
+   BUTTONS
+=========================== */
 .btn-cinza {
   background-color: #ffffff;
   color: #7f8081;
   border: 2px solid #7f8081;
-  border-radius: 0.375rem; /* igual ao btn-primary */
+  border-radius: 0.375rem;
   font-weight: 500;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -110,9 +153,12 @@ header {
   color: #ffffff;
 }
 
+/* ===========================
+   FOOTER
+=========================== */
 .footer {
-  background-color: #f8f9fa; /* ou outra cor que preferir */
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* sombra suave no topo do footer */
+  background-color: #f8f9fa;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer a {
@@ -120,9 +166,8 @@ header {
   color: #6c757d;
 }
 
-/* Ícones maiores */
 .footer .social-icons i {
-  font-size: 1.8rem; /* aumenta o tamanho dos ícones */
+  font-size: 1.8rem;
   margin: 0 10px;
   transition: color 0.3s ease;
 }
@@ -131,23 +176,64 @@ header {
   color: #343a40;
 }
 
-.custom-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* permite quebrar em telas menores */
-  gap: 1.5rem; /* espaçamento entre os links */
+/* ===========================
+   ASIDE: MENU OFFCANVAS
+=========================== */
+.menu-offcanvas {
+  background-color: #f8f9fa;
 }
 
-.custom-nav .nav-link {
-  display: inline-block;
+.menu-header {
+  padding: 20px;
+  border-bottom: 1px solid #dee2e6;
 }
 
-@media (max-width: 1098px) {
-    .custom-nav {
-        display: none !important;
-    }
+.menu-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6c757d;
+  text-align: center;
+}
 
-    .navbar-toggler {
-        display: block !important;
-    }
+.menu-body {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.menu-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-item {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-link {
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6c757d;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+.menu-link:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+.menu-link:hover i {
+  color: #212529;
+}
+
+.menu-link i {
+  color: #6c757d;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
