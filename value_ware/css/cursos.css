@@ -349,3 +349,12 @@ blockquote {
     margin-bottom: 1.5rem;
   }
 }
+
+.custom-card {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: #555;
+}
