@@ -279,3 +279,17 @@ header {
   box-shadow: none;
   background-image: none;
 }
+
+.link-clean {
+  color: #444444; /* mesma cor do texto do container */
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  padding: 4px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.link-clean:hover {
+  background-color: #f2f2f2; /* cinza claro no hover */
+  color: #000; /* opcional: escurece o texto no hover */
+}
