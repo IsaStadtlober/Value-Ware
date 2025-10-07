@@ -243,3 +243,21 @@ header {
   font-size: 1.1rem;
   transition: color 0.3s;
 }
+
+.img-sobre-nos {
+  width: 80%;
+}
+
+@media (max-width: 400px) {
+  .img-sobre-nos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; 
+  }
+
+  .titulo-banner {
+    font-size: 32px;
+  }
+}
+

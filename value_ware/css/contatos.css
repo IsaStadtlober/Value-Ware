@@ -293,3 +293,14 @@ header {
   background-color: #f2f2f2; /* cinza claro no hover */
   color: #000; /* opcional: escurece o texto no hover */
 }
+
+@media (max-width: 400px) {
+  .banner-text {
+    left: 30%; /* move mais para a direita */
+    transform: translate(-50%, -50%);
+  }
+
+  .titulo-banner {
+    font-size: clamp(1.8rem, 6vw, 2.6rem); /* um pouco menor se quiser também */
+  }
+}
